@@ -1,0 +1,7 @@
+<app-movie-form (submitForm)="getMovies($event)"></app-movie-form>
+<hr />
+<app-movie-form-result [data]="movies"></app-movie-form-result>
+<hr />
+<app-last-ten-movie-form-requests
+  [data]="formRequests"
+></app-last-ten-movie-form-requests>

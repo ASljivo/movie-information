@@ -1,0 +1,101 @@
+<h3>Get movie deatils</h3>
+
+<div class="movie-form">
+  <form
+    [formGroup]="movieForm"
+    (ngSubmit)="submitMovieForm()"
+    autocomplete="off"
+  >
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      formControlName="title"
+      placeholder="Title"
+      [ngClass]="{
+        'has-error': title.invalid && (title.dirty || title.touched)
+      }"
+    />
+    <app-error-message
+      *ngIf="title.invalid && (title.dirty || title.touched)"
+      [errorConfig]="{ formControl: title, field: 'Title' }"
+    ></app-error-message>
+
+    <label for="type">Type</label>
+    <select
+      id="type"
+      name="type"
+      formControlName="type"
+      [ngClass]="{
+        'has-error': type.invalid && (type.dirty || type.touched)
+      }"
+    >
+      <option *ngFor="let movie of movieTypes" [value]="movie.value">{{
+        movie.label
+      }}</option>
+    </select>
+    <app-error-message
+      *ngIf="type.invalid && (type.dirty || type.touched)"
+      [errorConfig]="{ formControl: type, field: 'Type' }"
+    ></app-error-message>
+
+    <label for="plot">Plot</label>
+    <select
+      id="plot"
+      name="plot"
+      formControlName="plot"
+      [ngClass]="{
+        'has-error': plot.invalid && (plot.dirty || plot.touched)
+      }"
+    >
+      <option *ngFor="let plot of plotTypes" [value]="plot.value">{{
+        plot.label
+      }}</option>
+    </select>
+    <app-error-message
+      *ngIf="plot.invalid && (plot.dirty || plot.touched)"
+      [errorConfig]="{ formControl: plot, field: 'Plot' }"
+    ></app-error-message>
+
+    <label for="year">Year</label>
+    <input
+      type="text"
+      id="year"
+      name="year"
+      formControlName="year"
+      placeholder="Year.."
+      [ngClass]="{
+        'has-error': year.invalid && (year.dirty || year.touched)
+      }"
+    />
+    <app-error-message
+      *ngIf="year.invalid && (year.dirty || year.touched)"
+      [errorConfig]="{ formControl: year, field: 'Year', patternMsg: 'number' }"
+    ></app-error-message>
+
+    <label for="lname">Actor</label>
+    <input
+      type="text"
+      id="actor"
+      name="actor"
+      formControlName="actor"
+      placeholder="Actor.."
+      [ngClass]="{
+        'has-error': actor.invalid && (actor.dirty || actor.touched)
+      }"
+    />
+    <app-error-message
+      *ngIf="actor.invalid && (actor.dirty || actor.touched)"
+      [errorConfig]="{ formControl: actor, field: 'Actor' }"
+    ></app-error-message>
+
+    <input
+      [ngClass]="{
+        disabled: movieForm.invalid
+      }"
+      type="submit"
+      value="Submit"
+    />
+  </form>
+</div>

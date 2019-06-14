@@ -1,0 +1,23 @@
+<div class="error-msg">
+  <span *ngIf="errorConfig.formControl.hasError('required')">
+    {{ errorConfig.field }}
+    <span> is required! </span>
+  </span>
+
+  <span *ngIf="errorConfig.formControl.hasError('pattern')">
+    <span *ngIf="errorConfig.patternMsg === 'invalid'">
+      {{ errorConfig.field }}
+      <span>
+        is not valid!
+      </span>
+    </span>
+    <span *ngIf="errorConfig.patternMsg === 'number'">
+      {{ errorConfig.field }}
+      <span> is not valid. Enter valid valid number value!</span>
+    </span>
+    <span *ngIf="errorConfig.patternMsg === 'date'">
+      {{ errorConfig.field }}
+      <span> is not valid. Enter valid date!</span>
+    </span>
+  </span>
+</div>

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Movie1",
+    "type": "Action",
+    "plot": "Full",
+    "year": 2011,
+    "actor": "Actor X"
+  },
+  {
+    "title": "Movie2",
+    "type": "Action",
+    "plot": "Full",
+    "year": 2011,
+    "actor": "Actor X"
+  }
+]

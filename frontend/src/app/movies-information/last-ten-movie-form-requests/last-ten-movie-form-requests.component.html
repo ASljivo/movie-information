@@ -1,0 +1,18 @@
+<h3>Last 10 form requests</h3>
+
+<table id="customers">
+  <tr>
+    <th>Title</th>
+    <th>Type</th>
+    <th>Plot</th>
+    <th>Year</th>
+    <th>Actor</th>
+  </tr>
+  <tr *ngFor="let request of data">
+    <td>{{ request.title }}</td>
+    <td>{{ request.type }}</td>
+    <td>{{ request.plot }}</td>
+    <td>{{ request.year }}</td>
+    <td>{{ request.actor }}</td>
+  </tr>
+</table>
